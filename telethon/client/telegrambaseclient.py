@@ -258,6 +258,7 @@ class TelegramBaseClient(abc.ABC):
             lang_code: str = 'en',
             system_lang_code: str = 'en',
             lang_pack: str = '',
+            params: types.TypeJSONValue | None = None,
             loop: asyncio.AbstractEventLoop = None,
             base_logger: typing.Union[str, logging.Logger] = None,
             receive_updates: bool = True,
@@ -393,7 +394,8 @@ class TelegramBaseClient(abc.ABC):
             system_lang_code=system_lang_code,
             lang_pack=lang_pack,
             query=None,
-            proxy=init_proxy
+            proxy=init_proxy,
+            params=params
         )
 
         # Remember flood-waited requests to avoid making them again
