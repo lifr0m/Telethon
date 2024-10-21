@@ -654,7 +654,8 @@ class AuthMethods:
     # region with blocks
 
     async def __aenter__(self):
-        return await self.start()
+        await self.connect()
+        return self
 
     async def __aexit__(self, *args):
         await self.disconnect()
