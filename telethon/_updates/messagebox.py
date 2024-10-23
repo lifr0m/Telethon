@@ -619,8 +619,8 @@ class MessageBox:
 
                 gd = fn.updates.GetDifferenceRequest(
                     pts=self.map[ENTRY_ACCOUNT].pts,
-                    pts_total_limit=None,
-                    date=self.date,
+                    pts_total_limit=5_000,
+                    date=datetime.datetime.now(),
                     qts=self.map[ENTRY_SECRET].pts if ENTRY_SECRET in self.map else NO_SEQ,
                 )
                 if __debug__:
